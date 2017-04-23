@@ -1,0 +1,33 @@
+
+
+
+// OC 代码(写这里)   每个 OC 对象都有一个  __OBJC__ 宏
+#ifdef __OBJC__
+
+//存放公用的宏
+#define KGBScreenW  [UIScreen mainScreen].bounds.size.width
+#define KGBScreenH  [UIScreen mainScreen].bounds.size.height
+#define kMMSideslipWidth        (240.0*KGBScreenW/320)
+
+//随机色
+#define KGBRandomColor  [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]
+//RGB 颜色
+#define  KGBRGBColor(r,g,b)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#import "UIView+frame.h"
+
+//调试的时候   都会有一个 DEBUG 宏
+#ifdef DEBUG
+#define KGBLOG(...)  NSLog(__VA_ARGS__)
+
+
+//运行的时候
+#else
+
+#define KGBLOG(...)
+
+#endif
+#endif
+
+//C 语言代码(写这里)
+#define A 10
